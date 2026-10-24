@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+const { title = "ZOUNKIMBA Joseph Mahukpéhou — Community Manager | Marketing digital | Sport", description = "" } = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <meta property="og:title" content={title} />
+  <link rel="icon" href="/favicon.svg" />
+</head>
+<body class="bg-brand-light text-brand-dark font-sans">
+  <header class="bg-brand-dark text-white">
+    <nav class="max-w-5xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
+      <a href="/" class="font-bold">ZOUNKIMBA J. Mahukpéhou</a>
+      <div class="flex gap-4 text-sm flex-wrap">
+        <a href="/a-propos">À propos</a>
+        <a href="/parcours">Parcours</a>
+        <a href="/competences">Compétences</a>
+        <a href="/certifications">Certifications</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <slot />
+  </main>
+  <footer class="text-center text-sm text-brand/70 py-6">
+    © {new Date().getFullYear()} ZOUNKIMBA Joseph Mahukpéhou
+  </footer>
+</body>
+</html>
