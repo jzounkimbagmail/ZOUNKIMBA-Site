@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const profil = {
+  nom: "ZOUNKIMBA Joseph Mahukpéhou",
+  titre: "Community Manager | Marketing digital | Sport",
+  presentation: "Étudiant en Master 1 professionnel en STAPS, spécialité Handisport, Activités Physiques Adaptées et Santé (HAPAS) à l'INJEPS.",
+};
+
+const poles = [
+  { icone: "🏐", titre: "Sport & Coaching", description: "Licence pro STAPS, stages d'encadrement, volleyball." },
+  { icone: "📱", titre: "Marketing digital & E-commerce", description: "Community Management, création de contenu, commerce digital." },
+  { icone: "📊", titre: "Data & Numérique", description: "Passeport numérique 10.000 Codeurs, IA, acculturation numérique." },
+];
+---
+<BaseLayout title={`${profil.nom} — ${profil.titre}`}>
+  <section class="text-center py-12">
+    <h1 class="text-3xl md:text-4xl font-bold text-brand-dark">{profil.nom}</h1>
+    <p class="text-lg text-brand-accent mt-2">{profil.titre}</p>
+    <p class="max-w-2xl mx-auto mt-6 text-brand/80">{profil.presentation}</p>
+    <div class="flex gap-4 justify-center mt-8 flex-wrap">
+      <a href="/services" class="bg-brand-dark text-white px-5 py-2 rounded">Mes services</a>
+      <a href="/portfolio" class="border border-brand-dark px-5 py-2 rounded">Portfolio</a>
+      <a href="/contact" class="border border-brand-dark px-5 py-2 rounded">Me contacter</a>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <h2 class="text-2xl font-bold text-center text-brand-dark mb-8">Mes pôles de compétences</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {poles.map((pole) => (
+        <div class="bg-white rounded-lg shadow p-6 text-center border-t-4 border-brand-accent">
+          <div class="text-4xl mb-3">{pole.icone}</div>
+          <h3 class="font-bold text-brand-dark mb-2">{pole.titre}</h3>
+          <p class="text-sm text-brand/70">{pole.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
