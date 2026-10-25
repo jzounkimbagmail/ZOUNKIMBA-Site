@@ -1,0 +1,44 @@
+ ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const experiences = [
+  { periode: "2025–2026", poste: "Entraîneur stagiaire de volleyball", structure: "CLUB ELITE VBC, Porto-Novo", missions: "Encadrement, animation et gestion des séances d'entraînement." },
+  { periode: "2024–2025", poste: "Entraîneur stagiaire de volleyball", structure: "CLUB AOJEG VBC, Avrankou", missions: "Encadrement, animation et gestion des séances d'entraînement." },
+  { periode: "2023–2024", poste: "Enseignant stagiaire d'Éducation Physique et Sportive", structure: "EPP TANMIN, Porto-Novo", missions: "Animation des séances d'Éducation Physique et Sportive." },
+];
+
+const formations = [
+  { annee: "En cours", intitule: "Master 1 professionnel en STAPS, spécialité HAPAS", etablissement: "INJEPS" },
+  { annee: "2026", intitule: "Licence professionnelle en STAPS", etablissement: "INJEPS" },
+  { annee: "2023", intitule: "Baccalauréat série B", etablissement: "CEG de Sèhouè, Toffo" },
+  { annee: "2019", intitule: "BEPC", etablissement: "CEG de Houègbo-Agon, Toffo" },
+];
+---
+<BaseLayout title="Parcours professionnel — ZOUNKIMBA Joseph Mahukpéhou" description="Expériences et formations académiques">
+  <section class="py-10 max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold text-brand-dark mb-8">Parcours professionnel</h1>
+
+    <h2 class="text-xl font-bold text-brand-dark mb-4">Expériences</h2>
+    <div class="space-y-4 mb-10">
+      {experiences.map((exp) => (
+        <div class="bg-white rounded-lg shadow p-5 border-l-4 border-brand-accent">
+          <span class="text-sm font-semibold text-brand-accent">{exp.periode}</span>
+          <h3 class="font-bold text-brand-dark">{exp.poste}</h3>
+          <p class="text-sm text-brand/70">{exp.structure}</p>
+          <p class="text-sm text-brand/80 mt-2">{exp.missions}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-bold text-brand-dark mb-4">Formations</h2>
+    <div class="space-y-4">
+      {formations.map((f) => (
+        <div class="bg-white rounded-lg shadow p-5 border-l-4 border-brand-dark">
+          <span class="text-sm font-semibold text-brand-dark">{f.annee}</span>
+          <h3 class="font-bold text-brand-dark">{f.intitule}</h3>
+          <p class="text-sm text-brand/70">{f.etablissement}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
