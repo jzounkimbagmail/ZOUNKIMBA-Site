@@ -1,0 +1,29 @@
+ ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const certifications = [
+  "Passeport numérique 10.000 Codeurs",
+  "Certificat en marketing digital",
+  "Certificat en commerce digital",
+  "Certificat en intelligence artificielle pour tous",
+  "Formation en informatique",
+  "Formation en anglais, niveau B1",
+  "Brevet national de secourisme",
+  "World Athletics — Entraîneur d'athlétisme, niveau 1",
+  "World Athletics — Protection des bases",
+  "Formation en arbitrage au volleyball",
+];
+---
+<BaseLayout title="Certifications — ZOUNKIMBA Joseph Mahukpéhou" description="Certifications et formations complémentaires">
+  <section class="py-10 max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold text-brand-dark mb-8">Certifications & formations complémentaires</h1>
+    <div class="grid md:grid-cols-2 gap-4">
+      {certifications.map((cert) => (
+        <div class="bg-white rounded-lg shadow p-4 flex items-start gap-3">
+          <span class="text-brand-accent text-xl">🎓</span>
+          <p class="text-brand-dark font-medium">{cert}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
