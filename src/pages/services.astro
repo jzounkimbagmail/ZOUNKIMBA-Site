@@ -1,0 +1,25 @@
+ ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  { titre: "Gestion des réseaux sociaux", description: "Animation et gestion de vos comptes sur les réseaux sociaux." },
+  { titre: "Création de contenus numériques", description: "Visuels, vidéos courtes et contenus adaptés à vos plateformes." },
+  { titre: "Conception de calendriers éditoriaux", description: "Planification de votre communication digitale." },
+  { titre: "Montage de vidéos courtes", description: "Montage avec textes, musique et transitions." },
+  { titre: "Assistance à la communication digitale", description: "Accompagnement dans votre stratégie de communication en ligne." },
+  { titre: "Accompagnement numérique des clubs et organisations sportives", description: "Mise en valeur digitale de votre structure sportive." },
+];
+---
+<BaseLayout title="Services — ZOUNKIMBA Joseph Mahukpéhou" description="Services en marketing digital et accompagnement numérique">
+  <section class="py-10 max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold text-brand-dark mb-8">Services</h1>
+    <div class="grid md:grid-cols-2 gap-5">
+      {services.map((s) => (
+        <div class="bg-white rounded-lg shadow p-5 border-t-4 border-brand-accent">
+          <h2 class="font-bold text-brand-dark mb-2">{s.titre}</h2>
+          <p class="text-sm text-brand/80">{s.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
