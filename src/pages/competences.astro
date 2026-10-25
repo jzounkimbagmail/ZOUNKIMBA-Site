@@ -1,0 +1,29 @@
+ ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  { nom: "Marketing et communication digitale", items: ["Community Management", "Gestion de communautés digitales", "Gestion d'un calendrier éditorial", "Utilisation des réseaux sociaux", "Analyse des statistiques", "Gestion de publicités payantes"] },
+  { nom: "Création de contenu", items: ["Canva", "CapCut", "Création de vidéos courtes", "Montage vidéo avec textes, musique et transitions", "Photographie culinaire et mise en scène de plats"] },
+  { nom: "Outils numériques", items: ["Intelligence artificielle", "Commerce digital", "Meta Business Suite", "Microsoft Word, Excel et PowerPoint"] },
+  { nom: "Sport et encadrement", items: ["Entraînement de volleyball", "Éducation physique et sportive", "Initiation à l'entraînement en athlétisme", "Secourisme"] },
+];
+---
+<BaseLayout title="Compétences — ZOUNKIMBA Joseph Mahukpéhou" description="Compétences en marketing digital, création de contenu, outils numériques et sport">
+  <section class="py-10 max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold text-brand-dark mb-8">Compétences</h1>
+    <div class="grid md:grid-cols-2 gap-6">
+      {categories.map((cat) => (
+        <div class="bg-white rounded-lg shadow p-5">
+          <h2 class="font-bold text-brand-dark mb-3">{cat.nom}</h2>
+          <ul class="space-y-1">
+            {cat.items.map((item) => (
+              <li class="text-sm text-brand/80 flex items-start gap-2">
+                <span class="text-brand-accent">•</span> {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
